@@ -3,6 +3,7 @@
 $primary: #ffbc00;
 $primary-500: #dfa503;
 $secondary: black;
+$secondary-500: #161616;
 $secondary-300: #3f3f3f;
 $secondary-200: #67686a;
 
@@ -20,6 +21,9 @@ body {
 	height: 8000px;
 }
 
+// ****************************
+// Header
+// ****************************
 .top-header {
 	background-color: black;
 	height: 115px;
@@ -208,4 +212,89 @@ body {
 			}
 		}
 	}
+}
+
+// ****************************
+// Home Page
+// ****************************
+
+// Hero Banner
+.home-hero-banner-top {
+	margin-top: 100px;
+
+	@media (max-width: $md) {
+		margin-top: 50px;
+	}
+	.skip-bin-info-holder {
+		border: 4px dashed $primary;
+		border-radius: 30px;
+		background-color: $secondary-500;
+		padding: 30px;
+		position: relative;
+		@media (max-width: $md) {
+			border-radius: 15px;
+			padding: 15px;
+		}
+
+		.overlay-image-arrow {
+			position: absolute;
+			bottom: 100%;
+			right: 25%;
+
+			@media (max-width: $md) {
+				display: none;
+			}
+
+			img {
+				width: 135px;
+				height: 146px;
+			}
+		}
+
+		.title {
+			font-size: 48px;
+			font-weight: bold;
+
+			@media (max-width: $md) {
+				font-size: 30px;
+			}
+			.fa {
+				color: $primary;
+			}
+		}
+
+		.desc {
+			font-size: 24px;
+			font-weight: 300;
+			color: $primary;
+
+			@media (max-width: $md) {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.seven-day-skip-info {
+		img {
+			@media (max-width: $lg) {
+				display: none;
+			}
+		}
+		.title {
+			display: none;
+			color: $primary;
+			font-size: 36px;
+			font-family: "Just Another Hand", cursive;
+			margin-top: 15px;
+			@media (max-width: $lg) {
+				display: block;
+			}
+		}
+	}
+}
+
+//Product Info
+.home-product-info {
+	height: 1000px;
+	background-color: $primary;
 }
