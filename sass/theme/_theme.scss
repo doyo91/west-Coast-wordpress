@@ -4,26 +4,71 @@ $primary: #ffbc00;
 $primary-500: #dfa503;
 $secondary: black;
 $secondary-300: #3f3f3f;
+$secondary-200: #67686a;
+
+// viewports
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
 
 body {
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
+	background-color: black;
+	color: white;
+	height: 8000px;
 }
 
 .top-header {
 	background-color: black;
 	height: 115px;
 	display: flex;
-	// justify-content: center;
 	align-items: center;
 	background-image: url(../img/header-top-bg.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 
+	@media (max-width: $md) {
+		padding-top: 30px;
+		padding-bottom: 45px;
+		height: auto;
+	}
+
 	.top-header-contact {
 		display: flex;
 		justify-content: flex-end;
+
+		@media (max-width: $md) {
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.mobile-menu-dropdown {
+			display: none;
+
+			@media (max-width: $md) {
+				display: block;
+			}
+
+			button {
+				color: white;
+				font-weight: bold;
+				font-size: 20px;
+				padding: 0.5em 1em;
+				border-radius: 5px;
+				border: none;
+
+				span {
+					margin-right: 0.5em;
+				}
+
+				&:hover {
+					background-color: black;
+				}
+			}
+		}
 
 		a {
 			display: inline-block;
@@ -35,9 +80,131 @@ body {
 			border-radius: 1.5em;
 			font-size: 20px;
 
+			@media (max-width: $md) {
+				margin-left: 0px;
+			}
+
+			&.top-header-contact-email {
+				@media (max-width: $xl) {
+					display: none;
+				}
+			}
+
 			.fa {
 				color: $primary;
 				margin-right: 0.5em;
+			}
+		}
+	}
+
+	.mobile-holder-logo {
+		@media (max-width: $md) {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+#main-nav {
+	background-color: $secondary-300;
+	border-top: 1px solid $secondary-200;
+	border-bottom: 1px solid $secondary-200;
+
+	#navbarNavDropdown {
+		@media (max-width: $xl) {
+			padding-top: 30px;
+		}
+	}
+
+	.mobile-menu-dropdown {
+		display: none;
+
+		@media (max-width: $xl) {
+			display: block;
+		}
+
+		@media (max-width: $md) {
+			display: none;
+		}
+
+		button {
+			color: white;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+
+			span {
+				margin-right: 0.5em;
+			}
+
+			&:hover {
+				background-color: black;
+			}
+		}
+	}
+
+	.search-input-holder {
+		border: 8px solid $primary;
+		background-color: white;
+		width: 350px;
+		padding: 0px 10px;
+		border-radius: 15px;
+		margin-top: -30px;
+		margin-bottom: -30px;
+		display: flex;
+		align-items: center;
+
+		@media (max-width: $md) {
+			width: 100%;
+		}
+
+		.title {
+			font-weight: 300;
+			font-size: 20px;
+			margin-right: 10px;
+			color: black;
+		}
+
+		input {
+			flex: 1;
+			font-size: 20px;
+			padding: 20px 0;
+			border: none;
+			outline: none;
+
+			&::placeholder {
+				font-weight: bold;
+				color: black;
+			}
+		}
+	}
+
+	#main-menu {
+		li {
+			a {
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: white;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			&.current-menu-item {
+				a {
+					color: $primary;
+				}
+			}
+			.dropdown-menu {
+				background-color: $secondary-300;
+
+				li {
+					a {
+						&:hover {
+							background-color: black;
+						}
+					}
+				}
 			}
 		}
 	}

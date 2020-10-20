@@ -32,15 +32,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="top-header">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-lg-5">
-						<a href="/">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
-						</a>
+					<div class="col-lg-5 col-md-6">
+						<div class="mobile-holder-logo">
+							<a href="/">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
+							</a>
+						</div>
 					</div>
-					<div class="col-lg-7">
+					<div class="col-lg-7 col-md-6">
 						<div class="top-header-contact">
 							<a href="tel:1800927831"><i class="fa fa-phone"></i> 1800 927 831</a>
-							<a href="mailto:info@westcoastwaste.com"><i class="fa fa-envelope-o"></i> info@westcoastwaste.com</a>
+							<a href="mailto:info@westcoastwaste.com" class="top-header-contact-email"><i class="fa fa-envelope-o"></i> info@westcoastwaste.com</a>
+							<div class="mobile-menu-dropdown">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+									<span>Menu</span> <i class="fa fa-bars"></i>
+								</button> 
+							</div>
 						</div>
 					</div>
 				</div>
@@ -48,19 +55,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 
-		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-primary" aria-labelledby="main-nav-label">
-
-			
-
-	
+		<nav id="main-nav" class="navbar navbar-expand-xl navbar-dark " aria-labelledby="main-nav-label">
 			<div class="container">
-		
+				<div class="search-input-holder">
+					<div class="title">Quote:</div>
+					<input type="text" placeholder="Type your suburb here">
+				</div>
 
-					
-
-				<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button> -->
+				<div class="mobile-menu-dropdown">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+					   <span>Menu</span> <i class="fa fa-bars"></i>
+				   </button> 
+				</div>
+				
 
 				<!-- The WordPress Menu goes here -->
 				<?php
