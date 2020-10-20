@@ -4,3 +4,41 @@ $primary: #ffbc00;
 $primary-500: #dfa503;
 $secondary: black;
 $secondary-300: #3f3f3f;
+
+body {
+	font-size: 18px;
+	font-family: "Roboto", sans-serif;
+}
+
+.top-header {
+	background-color: black;
+	height: 115px;
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+	background-image: url(../img/header-top-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	.top-header-contact {
+		display: flex;
+		justify-content: flex-end;
+
+		a {
+			display: inline-block;
+			color: white;
+			border: 1px solid $primary;
+			padding: 0.5em 1em;
+			margin-left: 1em;
+			background-color: black;
+			border-radius: 1.5em;
+			font-size: 20px;
+
+			.fa {
+				color: $primary;
+				margin-right: 0.5em;
+			}
+		}
+	}
+}

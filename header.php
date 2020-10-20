@@ -18,6 +18,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
 	<?php wp_head(); ?>
 </head>
 
@@ -28,41 +29,38 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
-
-			<h2 id="main-nav-label" class="sr-only">
-				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
-			</h2>
-
-		<?php if ( 'container' === $container ) : ?>
+		<div class="top-header">
 			<div class="container">
-		<?php endif; ?>
+				<div class="row align-items-center">
+					<div class="col-lg-5">
+						<a href="/">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
+						</a>
+					</div>
+					<div class="col-lg-7">
+						<div class="top-header-contact">
+							<a href="tel:1800927831"><i class="fa fa-phone"></i> 1800 927 831</a>
+							<a href="mailto:info@westcoastwaste.com"><i class="fa fa-envelope-o"></i> info@westcoastwaste.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
+		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-primary" aria-labelledby="main-nav-label">
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+			
 
-						<?php else : ?>
+	
+			<div class="container">
+		
 
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+					
 
-						<?php endif; ?>
-
-						<?php
-					} else {
-						the_custom_logo();
-					}
-					?>
-					<!-- end custom logo -->
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+				<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 					<span class="navbar-toggler-icon"></span>
-				</button>
+				</button> -->
 
 				<!-- The WordPress Menu goes here -->
 				<?php
@@ -79,9 +77,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				);
 				?>
-			<?php if ( 'container' === $container ) : ?>
 			</div><!-- .container -->
-			<?php endif; ?>
 
 		</nav><!-- .site-navigation -->
 
